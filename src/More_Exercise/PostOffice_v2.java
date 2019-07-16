@@ -20,7 +20,7 @@ public class PostOffice_v2 {
 
         String[] input = scanner.nextLine().split("\\|");
 
-        String regex = "([#]|[$]|[%]|[\\*]|[&])[A-Z]+([#]|[$]|[%]|[\\*]|[&])";
+        String regex = "([#]|[$]|[%]|[*]|[&])[A-Z]+([#]|[$]|[%]|[*]|[&])";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(input[0]);
 

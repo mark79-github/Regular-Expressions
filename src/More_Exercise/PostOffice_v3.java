@@ -21,7 +21,7 @@ public class PostOffice_v3 {
         String capitalLetters = "";
         HashMap<Integer, Integer> ascciMap = new HashMap<>();
 
-        String regex = "([#]|[\\$]|[%]|[\\*]|[&])[A-Z]+([#]|[\\$]|[%]|[\\*]|[&])";
+        String regex = "([#]|[$]|[%]|[*]|[&])[A-Z]+([#]|[$]|[%]|[*]|[&])";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(firstPart);
 

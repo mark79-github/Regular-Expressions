@@ -14,21 +14,21 @@ public class NetherRealms {
         int health;
         double damage;
 
-        public Demon(String name, int health, double damage) {
+        Demon(String name, int health, double damage) {
             this.name = name;
             this.health = health;
             this.damage = damage;
         }
 
-        public String getName() {
+        String getName() {
             return name;
         }
 
-        public int getHealth() {
+        int getHealth() {
             return health;
         }
 
-        public double getDamage() {
+        double getDamage() {
             return damage;
         }
     }
@@ -39,9 +39,9 @@ public class NetherRealms {
         List<Demon> demons = new ArrayList<>();
 
         String[] input = scanner.nextLine().split(",\\s*");
-        for (int i = 0; i < input.length; i++) {
-            String currentDemon = input[i].replaceAll(" ","");
-            String regex = "[^0-9\\+\\,\\-\\*\\/\\.]";
+        for (String s : input) {
+            String currentDemon = s.replaceAll(" ", "");
+            String regex = "[^0-9+,\\-*/.]";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(currentDemon);
             int health = 0;
@@ -57,7 +57,7 @@ public class NetherRealms {
                 baseDamage += Double.parseDouble(matcher.group(0));
             }
 
-            pattern = Pattern.compile("[*\\/]");
+            pattern = Pattern.compile("[*/]");
             matcher = pattern.matcher(currentDemon);
             while (matcher.find()) {
                 switch (matcher.group(0)) {
