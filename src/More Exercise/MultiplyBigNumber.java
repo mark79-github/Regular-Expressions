@@ -15,13 +15,9 @@ public class MultiplyBigNumber {
         for (int i = inputNum.length - 1; i >= 0; i--) {
             int currentNum = ((inputNum[i] - '0') * multiplier) + addNum;
             addNum = currentNum / 10;
-            //currentNum %= 10;
             exitNum.append(currentNum % 10);
         }
 
-//        if (addNum > 0) {
-//            exitNum.append(addNum);
-//        }
         exitNum.append(addNum);
 
         exitNum.reverse();
