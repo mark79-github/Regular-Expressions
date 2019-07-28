@@ -8,12 +8,12 @@ import java.util.regex.Pattern;
 
 public class MatchPhoneNumber {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         String regex = "\\+359([- ])2\\1[\\d]{3}\\1[\\d]{4}\\b";
         Pattern pattern = Pattern.compile(regex);
 
-        String input = scanner.nextLine();
+        String input = scan.nextLine();
         Matcher matcher = pattern.matcher(input);
 
         List<String> phones = new LinkedList<>();

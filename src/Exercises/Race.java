@@ -39,10 +39,14 @@ public class Race {
             input = scanner.nextLine();
         }
 
-        List<String> winners = racers.entrySet().stream().sorted((f, s) -> {
-            return s.getValue() - f.getValue();
-        }).limit(3).map(Map.Entry::getKey).collect(Collectors.toList());
-
-        System.out.println(String.format("1st place: %s%n2nd place: %s%n3rd place: %s%n", winners.get(0), winners.get(1), winners.get(2)));
+        List<String> winners = racers.entrySet().stream().
+                sorted((f, s) -> s.getValue() - f.getValue()).
+                limit(3).
+                map(Map.Entry::getKey).
+                collect(Collectors.toList());
+        System.out.println(String.format("1st place: %s%n2nd place: %s%n3rd place: %s%n",
+                winners.get(0),
+                winners.get(1),
+                winners.get(2)));
     }
 }
